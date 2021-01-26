@@ -1,0 +1,14 @@
+<!-- 
+                <li id="country-card" class="">
+                    <p class="country-name">Japan</p>
+                    <div class="country-details">
+                        <div class="safety-indicator">
+
+                        </div>
+                        <div class="country-stats">
+                            <p id="stats">confirmed: <span id="confirmed" class="stat-numbers">30292</span></p>
+                            <p id="stats">recovered: <span id="recovered" class="stat-numbers">30292</span></p>
+                            <p id="stats">dead: <span id="dead" class="stat-numbers">30292</span></p>
+                        </div>
+                    </div>
+                </li> -->

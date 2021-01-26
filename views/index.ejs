@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>COVID-19 Tracker Application</title>
+    <link rel="stylesheet" href="main.css">
+</head>
+<body>
+    <main>
+        <header id="search-me">
+            <div class="title">
+                <h4 id="worldwide-stats">Worldwide statistics</h4>
+            </div>
+            <form action="post">
+                <label for="search">Search for country: </label>
+                <input type="text" name="" id="search-bar" placeholder="Type to search country...">
+            </form>
+        </header>
+        <div id="data-graph">
+            <canvas id="map-canvas"></canvas>
+        </div>
+        <div id="world-stats">
+            <div class="label">
+                <p>LEGEND: </p>
+            </div>
+            <ul id="world-cases-stats">
+                <li>DANGER<br> <span class="legend-base" id="legend-danger"></span></li>
+                <li>WARY <br> <span class="legend-base" id="legend-wary"></span></li>
+                <li>SAFE <br> <span class="legend-base" id="legend-safe"></span></li>
+            </ul>
+        </div>
+        <div id="country-data">
+            <ul class="country-data-cards">
+                <% allCountries.forEach(eachCountry => { %>
+                <li id="country-card" class="">
+                    <p class="country-name">
+                        <%- eachCountry.province === null ? eachCountry.country : eachCountry.country + ", " + eachCountry.province %>
+                    </p>
+                    <div class="country-details">
+                        <% if(eachCountry.confirmed > 500000){ %>
+                        <div class="safety-indicator danger">
+                        </div>
+                        <% } else if(eachCountry.confirmed > 100000 && eachCountry.confirmed < 400000) { %>
+                        <div class="safety-indicator wary">
+                        </div>
+                        <% } else{%>
+                        <div class="safety-indicator safe">
+                        </div>
+                        <% } %>
+
+                        <div class="country-stats">
+                            <p id="stats">confirmed: <span id="confirmed"
+                                    class="stat-numbers"><%- eachCountry.confirmed %></span></p>
+                            <p id="stats">recovered: <span id="recovered"
+                                    class="stat-numbers"><%- eachCountry.recovered %></span></p>
+                            <p id="stats">dead: <span id="dead" class="stat-numbers"><%- eachCountry.deaths %></span>
+                            </p>
+                        </div>
+                    </div>
+                </li>
+                <% }) %>
+            </ul>
+        </div>
+        <footer>
+            <p class="footer-info">
+                Made with <span id="love-emoji">❤</span> by <a href="https://vanneka.netlify.app/" id="site-builder"
+                    target="_blank">Vanessa</a>
+            </p>
+        </footer>
+    </main>
+</body>
+<!-- <script src="app.js"></script> -->
+</html>

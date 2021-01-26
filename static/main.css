@@ -1,0 +1,257 @@
+/*CSS VARIABLES*/
+/*
+black: #000000
+yellow: #fdd32a
+grey: #f6f6f4
+white: #fffff
+*/
+:root {
+    --black: #000000;
+    --white: #ffffff;
+    --yellow: #fdd32a;
+    --dark-yellow: #d3af21;
+    --very-dark-yellow: #4d3f0b;
+    --grey: #f6f6f4;
+    --link-trans: all ease-in-out 0.3s;
+}
+
+body {
+    overflow-y: hidden;
+    box-sizing: border-box;
+    height: 100vh;
+    font-family: sans-serif;
+    margin: 0;
+}
+
+ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+a {
+    text-decoration: none;
+    color: #4c4c4c;
+    transition: var(--link-trans);
+}
+
+a:hover {
+    text-decoration: underline;
+    color: var(--dark-yellow);
+    transition: var(--link-trans);
+}
+
+a:visited {
+    text-decoration: underline;
+    color: var(--dark-yellow);
+    transition: var(--link-trans);
+}
+
+#search-me {
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: start;
+}
+
+#search-me form {
+    margin-left: auto;
+}
+
+#search-me button {
+    outline: none;
+    border: none;
+    background-color: var(--yellow);
+    padding: 4px 20px;
+    border-radius: 3px;
+    transition: var(--link-trans);
+}
+
+#search-me button:hover {
+    cursor: pointer;
+    background-color: var(--very-dark-yellow);
+    transition: var(--link-trans);
+    color: white;
+}
+
+#search-me #search-bar {
+    outline: none;
+    border: 1px solid rgb(114, 114, 114);
+    padding: 2px 30px 2px 10px;
+    border-radius: 3px;
+}
+
+#search-me label {
+    font-weight: bold;
+}
+
+#world-stats {
+    padding : 0 10px;
+    display: flex;
+    align-items: top;
+    justify-content: space-between;
+    flex: 1;
+    font-weight: bold;
+}
+
+#world-stats .label {
+    font-size: 14px;
+}
+
+#world-stats li {
+    text-transform: capitalize;
+    text-align: center;
+    font-size: 12px;
+}
+
+.legend-base {
+    background-color: transparent;
+    width: 80px;
+    height: 20px;
+    display: block;
+    border-radius: 3px;
+}
+
+ 
+
+#legend-danger {
+    background-color: red;
+}
+#legend-wary {
+    background-color: rgb(255, 153, 0);
+}
+#legend-safe {
+    background-color: rgb(0, 255, 76);
+}
+
+#world-cases-stats {
+    flex: 1;
+    display: -webkit-flex;
+    display: -moz-flex;
+    display: -ms-flex;
+    display: -o-flex;
+    display: flex;
+    justify-content: space-around;
+}
+
+#data-graph {
+    height: 38vh;
+}
+
+#country-data {
+    overflow-y: scroll;
+    height: 38vh;
+    padding: 0 10px 0 10px;
+}
+
+#country-card {
+    background-color: var(--grey);
+    margin: 15px 0;
+    border-bottom-right-radius: 10px;
+    border-bottom-left-radius: 10px;
+    /* padding: 15px; */
+}
+
+.country-name {
+    padding: 10px;
+    font-weight: bold;
+    text-transform: capitalize;
+    font-size: 15px;
+    margin: 0;
+    background-color: var(--yellow);
+    border-top-right-radius: 10px;
+    border-top-left-radius: 10px;
+    /*    border-bottom:3px solid var(--yellow);*/
+}
+
+.country-details {
+    display: -webkit-flex;
+    display: -moz-flex;
+    display: -ms-flex;
+    display: -o-flex;
+    display: flex;
+    -ms-align-items: center;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 10px 0 10px;
+}
+
+.country-stats p {
+    font-weight: bold;
+    text-transform: uppercase;
+    font-size: 14px;
+}
+
+.stat-numbers {
+    font-weight: normal;
+}
+
+.safety-indicator {
+    width: 120px;
+    height: 60px;
+    background-color: transparent;
+    display: block;
+}
+
+.danger {
+    background-color: red;
+    border-radius: 10px;
+}
+
+.wary {
+    background-color: rgb(255, 153, 0);
+    border-radius: 10px;
+}
+
+.safe {
+    background-color: rgb(0, 255, 76);
+    border-radius: 10px;
+}
+
+footer {
+    padding: 0 10px 0 10px;
+    text-align: center;
+}
+
+.footer-info {
+    margin: 0;
+    padding-top: 5px;
+}
+
+#love-emoji {
+    color: red;
+}
+
+/*MEDIA QUERIES*/
+
+@media screen and (max-width: 600px) {
+    #search-me {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    #search-me form {
+        flex: 1;
+        padding: 0 10px;
+    }
+
+    #search-me .title {
+        flex: 1
+    }
+
+    #search-me button {
+        margin-top: 2px;
+    }
+
+    #search-me label {
+        display: none;
+    }
+}
+
+@media screen and (min-width: 600px) { 
+    .safety-indicator {
+        width: 240px;
+        height: 60px;
+    }
+}
